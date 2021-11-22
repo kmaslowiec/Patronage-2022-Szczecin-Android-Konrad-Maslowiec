@@ -1,0 +1,1 @@
+# Patronage-2022-Szczecin-Android-Konrad-Maslowiec
