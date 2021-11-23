@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">IntiveTaskOne</string>
+    <string name="app_name">Konrad Masolowiec</string>
     <string name="my_logo">my logo jupiter</string>
+    <string name="intive">Hello intive!</string>
 </resources>
