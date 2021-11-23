@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="label_style">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+</resources>
