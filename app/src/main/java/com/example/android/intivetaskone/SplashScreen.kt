@@ -5,14 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import kotlin.system.exitProcess
+
 
 //The warning is regarding Splash Screen Api
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -31,5 +35,16 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 5000)
+
+        //Custom Back Button that kills the app and removes it from the task manager
+        onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    finishAndRemoveTask()
+                    exitProcess(0)
+                }
+            }
+        )
     }
 }
