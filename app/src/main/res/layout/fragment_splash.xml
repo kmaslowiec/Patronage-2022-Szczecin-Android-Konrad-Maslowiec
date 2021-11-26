@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--No need to use more complicated layouts than LinearLayout for this screen-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:background="@color/pure_gold"
     tools:context=".fragments.SplashFragment">
 
@@ -14,21 +15,4 @@
         android:contentDescription="@string/my_logo"
         android:padding="@dimen/logo_padding"
         android:src="@drawable/rotate_animation" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="@style/Widget.Theme.IntiveTaskOne.ButtonBar.Fullscreen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-        </LinearLayout>
-    </FrameLayout>
-</FrameLayout>
+</LinearLayout>

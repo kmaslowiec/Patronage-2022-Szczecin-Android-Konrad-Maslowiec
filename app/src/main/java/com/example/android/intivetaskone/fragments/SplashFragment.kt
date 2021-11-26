@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.android.intivetaskone.databinding.FragmentSplashBinding
 
-
 private const val DELAY_TIME = 5000L
 
 class SplashFragment : Fragment() {
@@ -26,7 +25,7 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //View binder
+        //View binder to use with NavController in Timer
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
         timer()
@@ -55,6 +54,7 @@ class SplashFragment : Fragment() {
                 controller.systemBarsBehavior = WindowInsetsControllerCompat
                     .BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
                 controller.hide(WindowInsetsCompat.Type.systemBars())
+                //Hides the AppBar instantly
                 (requireActivity() as AppCompatActivity).supportActionBar?.hide()
             } else {
                 controller.show(WindowInsetsCompat.Type.systemBars())
