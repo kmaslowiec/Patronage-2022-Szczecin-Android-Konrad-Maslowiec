@@ -1,4 +1,4 @@
-# **Patronage 2022 Szczecin**
+# **Android Patronage 2022 Szczecin**
 
 ## Zadanie 1:
 *The main version at branch Zadanie-1 implements Navigation Component.  
