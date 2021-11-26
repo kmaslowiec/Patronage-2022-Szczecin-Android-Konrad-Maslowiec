@@ -10,7 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Custom Back Button that kills the app and removes it from the task manager
+        customBackButton()
+    }
+
+    //Custom Back Button that kills the app and removes it from the task manager
+    private fun customBackButton() {
         onBackPressedDispatcher.addCallback(
             this,
             object : OnBackPressedCallback(true) {

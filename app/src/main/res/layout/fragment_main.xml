@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><!--No need to use more complicated layouts for this screen-->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/pure_gold"
-    tools:context=".SplashScreen">
+    tools:context=".fragments.MainFragment">
 
-    <ImageView
-        android:id="@+id/SplashScreenImage"
+    <TextView
+        style="@style/label_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:contentDescription="@string/my_logo"
-        android:src="@drawable/rotate_animation"
-        android:padding="@dimen/logo_padding" />
+        android:text="@string/intive" />
+
 </LinearLayout>

@@ -2,4 +2,6 @@
     <string name="app_name">Konrad Maslowiec</string>
     <string name="my_logo">My logo</string>
     <string name="intive">Hello intive!</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
