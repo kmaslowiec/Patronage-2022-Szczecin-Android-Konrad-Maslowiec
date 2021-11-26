@@ -49,7 +49,6 @@ class SplashFragment : Fragment() {
             activity?.window!!,
             activity?.window?.decorView!!
         ).let { controller ->
-
             if (isFullScreen) {
                 controller.systemBarsBehavior = WindowInsetsControllerCompat
                     .BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
