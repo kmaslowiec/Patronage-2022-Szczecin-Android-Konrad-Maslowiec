@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.android.intivetaskone.fragments.SplashFragment"
+        android:name="com.example.android.intivetaskone.fragments.splash.SplashFragment"
         android:label="Welcome"
         tools:layout="@layout/fragment_splash">
         <action

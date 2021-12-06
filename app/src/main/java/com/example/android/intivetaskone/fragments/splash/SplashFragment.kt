@@ -1,8 +1,6 @@
-package com.example.android.intivetaskone.fragments
+package com.example.android.intivetaskone.fragments.splash
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,14 +9,15 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.android.intivetaskone.databinding.FragmentSplashBinding
 
-private const val DELAY_TIME = 5000L
 
 class SplashFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashBinding
+    private lateinit var viewModel: SplashModelView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +27,15 @@ class SplashFragment : Fragment() {
         //View binder to use with NavController in Timer
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
-        timer()
+        viewModel = ViewModelProvider(this)[SplashModelView::class.java]
+
+        viewModel.isTimeUp.observe(viewLifecycleOwner, { time ->
+            if (time) {
+                Navigation.findNavController(binding.root).navigate(
+                    SplashFragmentDirections.actionSplashFragmentToMainFragment()
+                )
+            }
+        })
 
         return binding.root
     }
@@ -60,14 +67,5 @@ class SplashFragment : Fragment() {
                 (requireActivity() as AppCompatActivity).supportActionBar?.show()
             }
         }
-    }
-
-    private fun timer() {
-        Handler(Looper.getMainLooper()).postDelayed({
-            Navigation.findNavController(binding.root).navigate(
-                SplashFragmentDirections
-                    .actionSplashFragmentToMainFragment()
-            )
-        }, DELAY_TIME)
     }
 }
