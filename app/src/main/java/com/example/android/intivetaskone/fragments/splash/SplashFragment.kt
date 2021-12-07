@@ -29,13 +29,7 @@ class SplashFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[SplashModelView::class.java]
 
-        viewModel.isTimeUp.observe(viewLifecycleOwner, { time ->
-            if (time) {
-                Navigation.findNavController(binding.root).navigate(
-                    SplashFragmentDirections.actionSplashFragmentToMainFragment()
-                )
-            }
-        })
+        goToMainFragment()
 
         return binding.root
     }
@@ -67,5 +61,15 @@ class SplashFragment : Fragment() {
                 (requireActivity() as AppCompatActivity).supportActionBar?.show()
             }
         }
+    }
+
+    private fun goToMainFragment() {
+        viewModel.isTimeUp.observe(viewLifecycleOwner, { time ->
+            if (time) {
+                Navigation.findNavController(binding.root).navigate(
+                    SplashFragmentDirections.actionSplashFragmentToMainFragment()
+                )
+            }
+        })
     }
 }
