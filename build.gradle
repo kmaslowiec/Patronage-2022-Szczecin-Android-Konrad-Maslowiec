@@ -3,6 +3,7 @@ buildscript {
     ext{
         nav_version = "2.3.5"
         version_retrofit = "2.9.0"
+        version_moshi = "1.12.0"
     }
 
     repositories {
@@ -10,7 +11,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10-RC'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 

@@ -1,9 +1,14 @@
 package com.example.android.intivetaskone.fragments
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.android.intivetaskone.network.Api
+import com.example.android.intivetaskone.network.InfoProperty
+import com.example.android.intivetaskone.network.Infos
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,14 +24,17 @@ class MainViewModel : ViewModel() {
     }
 
     private fun getMarsRealEstateProperties() {
-        Api.retrofitService.getProperties().enqueue(object : Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                _response.value = "Failure: " + t.message
-            }
+        viewModelScope.launch {
+            Api.retrofitService.getProperties().enqueue(object : Callback<Infos> {
+                override fun onFailure(call: Call<Infos>, t: Throwable) {
+                    _response.value = "Failure: " + t.message
+                }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                _response.value = response.body()
-            }
-        })
+                override fun onResponse(call: Call<Infos>, response: Response<Infos>) {
+                    _response.value = "Success: ${response.body()} items"
+                }
+            })
+
+        }
     }
 }
