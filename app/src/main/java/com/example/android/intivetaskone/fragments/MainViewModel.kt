@@ -1,6 +1,6 @@
 package com.example.android.intivetaskone.fragments
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,10 +14,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainViewModel : ViewModel() {
-    private val _response = MutableLiveData<String>()
+    private val _status = MutableLiveData<String>()
 
-    val response: LiveData<String>
-        get() = _response
+    val status: LiveData<String>
+        get() = _status
+
+    private val _info = MutableLiveData<InfoProperty>()
+
+    val info: LiveData<InfoProperty>
+        get() = _info
 
     init {
         getMarsRealEstateProperties()
@@ -27,14 +32,14 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             Api.retrofitService.getProperties().enqueue(object : Callback<Infos> {
                 override fun onFailure(call: Call<Infos>, t: Throwable) {
-                    _response.value = "Failure: " + t.message
+                    _status.value = "Failure: " + t.message
                 }
 
                 override fun onResponse(call: Call<Infos>, response: Response<Infos>) {
-                    _response.value = "Success: ${response.body()} items"
+                    _status.value = "Success: ${response.body()?.array?.get(0)} items"
+                    _info.value = response.body()?.array?.get(0)
                 }
             })
-
         }
     }
 }

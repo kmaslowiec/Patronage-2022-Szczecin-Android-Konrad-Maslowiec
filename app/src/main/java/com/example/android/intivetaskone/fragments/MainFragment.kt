@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.intivetaskone.databinding.FragmentMainBinding
+import com.example.android.intivetaskone.databinding.GridViewItemBinding
 
 class MainFragment : Fragment() {
 
@@ -19,7 +19,8 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val binding = FragmentMainBinding.inflate(inflater, container, false)
+        val binding = GridViewItemBinding.inflate(inflater)
+        //FragmentMainBinding.inflate(inflater, container, false)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
