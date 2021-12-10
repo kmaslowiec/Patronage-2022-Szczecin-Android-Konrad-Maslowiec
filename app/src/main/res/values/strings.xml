@@ -1,8 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Konrad Maslowiec</string>
     <string name="my_logo">My logo</string>
     <string name="intive">Hello intive!</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="image_desc">Info picture</string>
+    <string name="example_title">The Title</string>
+    <string name="example_desc" tools:ignore="Typos">The description can be very long long long
+        long long long long long long long long long description</string>
 </resources>

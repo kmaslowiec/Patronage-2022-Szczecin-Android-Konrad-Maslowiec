@@ -37,7 +37,7 @@ class MainViewModel : ViewModel() {
 
                 override fun onResponse(call: Call<Infos>, response: Response<Infos>) {
                     _status.value = "Success: ${response.body()?.array?.get(0)} items"
-                    _info.value = response.body()?.array?.get(0)
+                    _info.value = response.body()?.array?.get(1)
                 }
             })
         }
