@@ -20,7 +20,6 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
                 .build()
         val glideUrl = GlideUrl(imgUri, userAgentHeader)
 
-
         Glide.with(imgView.context).load(glideUrl)
             .apply(
                 RequestOptions()

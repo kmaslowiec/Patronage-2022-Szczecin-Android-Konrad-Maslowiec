@@ -39,7 +39,7 @@
             style="@style/label_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.info.get(0).title}"
+            android:text=""
             tools:text="@string/example_title"
             />
 
@@ -48,11 +48,11 @@
             style="@style/label_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.info.get(0).desc}"
+            android:text=""
             tools:text="@string/example_desc"
             />
 
-        <ImageView
+<!--        <ImageView
         android:id="@+id/info_image"
         android:layout_width="match_parent"
         android:layout_height="170dp"
@@ -60,8 +60,8 @@
         android:contentDescription="@string/image_desc"
         android:padding="2dp"
         android:scaleType="centerCrop"
-        app:imageUrl="@{viewModel.info.get(0).url}"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:imageUrl=""
+        tools:src="@tools:sample/backgrounds/scenic" />-->
     </LinearLayout>
 
 </layout>
