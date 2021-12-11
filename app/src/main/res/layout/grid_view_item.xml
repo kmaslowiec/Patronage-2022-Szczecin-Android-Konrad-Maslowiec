@@ -39,7 +39,7 @@
             style="@style/label_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.info.title}"
+            android:text="@{viewModel.info.get(0).title}"
             tools:text="@string/example_title"
             />
 
@@ -48,7 +48,7 @@
             style="@style/label_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.info.desc}"
+            android:text="@{viewModel.info.get(0).desc}"
             tools:text="@string/example_desc"
             />
 
@@ -60,7 +60,7 @@
         android:contentDescription="@string/image_desc"
         android:padding="2dp"
         android:scaleType="centerCrop"
-        app:imageUrl="@{viewModel.info.url}"
+        app:imageUrl="@{viewModel.info.get(0).url}"
         tools:src="@tools:sample/backgrounds/scenic" />
     </LinearLayout>
 

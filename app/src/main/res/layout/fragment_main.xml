@@ -18,11 +18,11 @@
         android:orientation="vertical"
         tools:context=".fragments.MainFragment">
 
-        <TextView
+        <!--<TextView
             style="@style/label_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@{viewModel.info.url}" />
+            android:text="@{viewModel.info.url}" />-->
     </LinearLayout>
 </layout>

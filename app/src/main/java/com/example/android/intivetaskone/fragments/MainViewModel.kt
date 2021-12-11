@@ -19,10 +19,11 @@ class MainViewModel : ViewModel() {
     val status: LiveData<String>
         get() = _status
 
-    private val _info = MutableLiveData<InfoProperty>()
+    private val _info = MutableLiveData<List<InfoProperty>>()
 
-    val info: LiveData<InfoProperty>
+    val info: LiveData<List<InfoProperty>>
         get() = _info
+
 
     init {
         getMarsRealEstateProperties()
@@ -37,7 +38,7 @@ class MainViewModel : ViewModel() {
 
                 override fun onResponse(call: Call<Infos>, response: Response<Infos>) {
                     _status.value = "Success: ${response.body()?.array?.get(0)} items"
-                    _info.value = response.body()?.array?.get(1)
+                    _info.value = response.body()?.array
                 }
             })
         }
