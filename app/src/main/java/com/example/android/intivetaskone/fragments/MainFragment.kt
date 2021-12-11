@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,16 +29,14 @@ class MainFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val binding = FragmentMainBinding.inflate(inflater)
-        //FragmentMainBinding.inflate(inflater, container, false)
 
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = GridLayoutManager(this.context,2)
 
-        val item = listOf<InfoProperty>(InfoProperty("test1", "desc1", "url"),
-            InfoProperty("test2", "desc2", "url"))
-
-        mAdapter = RecyclerViewAdapter(item)
-        recyclerView.adapter = mAdapter
+        viewModel.info.observe(viewLifecycleOwner, { list ->
+            mAdapter = RecyclerViewAdapter(list)
+            recyclerView.adapter = mAdapter
+        })
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
@@ -45,7 +44,6 @@ class MainFragment : Fragment() {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
-        setHasOptionsMenu(true)
         return binding.root
     }
 }
