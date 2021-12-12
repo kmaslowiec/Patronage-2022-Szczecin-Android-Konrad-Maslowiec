@@ -8,4 +8,5 @@
     <string name="example_title">The Title</string>
     <string name="example_desc" tools:ignore="Typos">The description can be very long long long
         long long long long long long long long long description</string>
+    <string name="no_internet">NO INTERNET CONNECTION</string>
 </resources>

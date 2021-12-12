@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.android.intivetaskone.R
 import com.example.android.intivetaskone.RecyclerViewAdapter
 import com.example.android.intivetaskone.databinding.FragmentMainBinding
 import com.example.android.intivetaskone.network.ConnectivityStatus
@@ -39,11 +40,8 @@ class MainFragment : Fragment() {
         //Check the Internet Connection
         val connectivity = ConnectivityStatus(this.requireContext())
         connectivity.observe(viewLifecycleOwner, { isOnline ->
-            if (isOnline) {
-                Toast.makeText(this.context, "INTERNET WORKS", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this.context, "NO INTERNET CONNECTION", Toast.LENGTH_LONG).show()
-            }
+            if (!isOnline) Toast.makeText(this.context, getText(R.string.no_internet),
+                Toast.LENGTH_LONG).show()
         })
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
