@@ -1,4 +1,4 @@
-package com.example.android.intivetaskone.fragments
+package com.example.android.intivetaskone.fragments.main
 
 import android.content.Context
 import android.content.res.Configuration
@@ -49,9 +49,6 @@ class MainFragment : Fragment() {
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
-
-        // Giving the binding access to the OverviewViewModel
-        binding.viewModel = viewModel
 
         return binding.root
     }

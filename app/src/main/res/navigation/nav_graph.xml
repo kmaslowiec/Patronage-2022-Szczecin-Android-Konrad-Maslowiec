@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.android.intivetaskone.fragments.MainFragment"
+        android:name="com.example.android.intivetaskone.fragments.main.MainFragment"
         android:label="Konrad Maslowiec"
         tools:layout="@layout/fragment_main" />
 </navigation>

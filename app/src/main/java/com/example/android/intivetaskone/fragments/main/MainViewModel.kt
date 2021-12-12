@@ -1,4 +1,4 @@
-package com.example.android.intivetaskone.fragments
+package com.example.android.intivetaskone.fragments.main
 
 
 import androidx.lifecycle.LiveData
