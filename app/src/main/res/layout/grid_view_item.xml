@@ -21,7 +21,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
+
+    <variable
             name="viewModel"
             type="com.example.android.intivetaskone.fragments.MainViewModel" />
     </data>
