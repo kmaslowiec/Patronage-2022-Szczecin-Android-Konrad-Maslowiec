@@ -15,6 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainViewModel : ViewModel() {
+
     private val _status = MutableLiveData<String>()
 
     val status: LiveData<String>
@@ -43,4 +44,6 @@ class MainViewModel : ViewModel() {
             })
         }
     }
+
+
 }
