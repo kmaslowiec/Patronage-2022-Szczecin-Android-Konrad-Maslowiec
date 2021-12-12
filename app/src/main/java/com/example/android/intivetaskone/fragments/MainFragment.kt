@@ -5,15 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.android.intivetaskone.R
 import com.example.android.intivetaskone.RecyclerViewAdapter
 import com.example.android.intivetaskone.databinding.FragmentMainBinding
-import com.example.android.intivetaskone.databinding.GridViewItemBinding
-import com.example.android.intivetaskone.network.InfoProperty
 
 class MainFragment : Fragment() {
 

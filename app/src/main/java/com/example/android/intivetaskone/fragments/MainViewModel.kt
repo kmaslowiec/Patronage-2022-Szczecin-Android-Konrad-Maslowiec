@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.android.intivetaskone.network.Api
 import com.example.android.intivetaskone.network.InfoProperty
 import com.example.android.intivetaskone.network.Infos
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,13 +25,12 @@ class MainViewModel : ViewModel() {
     val info: LiveData<List<InfoProperty>>
         get() = _info
 
-
     init {
         getMarsRealEstateProperties()
     }
 
     private fun getMarsRealEstateProperties() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             Api.retrofitService.getProperties().enqueue(object : Callback<Infos> {
                 override fun onFailure(call: Call<Infos>, t: Throwable) {
                     _status.value = "Failure: " + t.message

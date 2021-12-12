@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.android.intivetaskone.fragments.MainViewModel" />
@@ -25,21 +24,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?android:attr/actionBarSize"
-            android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".fragments.MainFragment">
-
-            &lt;!&ndash;<TextView
-                style="@style/label_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@{viewModel.info.url}" />&ndash;&gt;
-        </LinearLayout>-->
 </layout>
