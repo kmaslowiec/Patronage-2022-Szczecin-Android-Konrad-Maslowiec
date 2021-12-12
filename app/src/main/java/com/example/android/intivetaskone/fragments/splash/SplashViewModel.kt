@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-
 private const val DELAY_TIME = 5000L
 
 class SplashModelView : ViewModel() {

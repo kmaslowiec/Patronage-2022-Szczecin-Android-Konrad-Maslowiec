@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.android.intivetaskone.databinding.FragmentSplashBinding
 
-
 class SplashFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashBinding

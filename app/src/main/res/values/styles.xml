@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<style name="label_style">
+<style name="desc_style">
         <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/desc_size</item>
+    </style>
+
+    <style name="title_style">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/title_size</item>
     </style>
 </resources>

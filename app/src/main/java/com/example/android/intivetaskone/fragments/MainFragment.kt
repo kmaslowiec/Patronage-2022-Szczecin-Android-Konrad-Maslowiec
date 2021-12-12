@@ -1,5 +1,7 @@
 package com.example.android.intivetaskone.fragments
 
+import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +31,8 @@ class MainFragment : Fragment() {
         val binding = FragmentMainBinding.inflate(inflater)
 
         val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = GridLayoutManager(this.context, 2)
+        val span = if (isTablet(requireContext())) 4 else 2
+        recyclerView.layoutManager = GridLayoutManager(this.context, span)
 
         //Update the RecyclerView
         viewModel.info.observe(viewLifecycleOwner, { list ->
@@ -51,5 +54,11 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
 
         return binding.root
+    }
+
+    private fun isTablet(context: Context): Boolean {
+        return ((context.resources.configuration.screenLayout
+                and Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE)
     }
 }
